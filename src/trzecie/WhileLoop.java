@@ -4,10 +4,70 @@ import java.util.Scanner;
 
 public class WhileLoop {
     public static void main(String[] args) {
-        //podajemy liczby tak długo, aż nie zostanie podane 0. WYpisujemy największą liczbę
         Scanner scanner = new Scanner(System.in);
-        int value = 1;
-        int maxValue = 0;
+        //napisać pętle która odwraca liczbę np 12345 --> 54321
+//        System.out.println("Zadanie 1");
+//        int someValue = 154;
+//        int reversedNumber = 0;
+//        while (someValue != 0) {
+//            int digit = someValue % 10;
+//            reversedNumber *= 10;
+//            reversedNumber += digit;
+//            someValue /= 10;
+//        }
+//            System.out.println("Reversed Number: " + reversedNumber);
+//
+//
+//
+//        //wczytujemy n liczb, i sumujemy wsyztskie cyfry 123,456 --> 1+2+3+4+5+6= 21 (ktoś chce podać 5 liczb)
+//            System.out.println("zadanie 2");
+//            System.out.println("How many values do you want addresult?");
+//
+//            int n = 4;
+//            int sum = 0;
+//            for (int i = 0; i < n; i++) {
+//                System.out.println("Insert number");
+//                int value = scanner.nextInt();
+//                //sumowanie cyfr
+//                while (value != 0) {
+//                    int digit1 = value % 10;
+//                    sum += digit;
+//                    value /= 10;
+//                }
+//
+//                System.out.println("Sum = " + sum);
+//
+//            // pozbyć się wszystkich 0 z liczby np. 120002 --> odwrócona wersja 221
+//            int numberWithZeros = 12002;
+//            int numberWithoutZeros = 0;
+//            while (numberWithZeros != 0) {
+//                int digit1 = numberWithZeros % 10;
+//                if (digit1 != 0) {
+//                    numberWithoutZeros *= 10;
+//                    numberWithoutZeros += digit1;
+//                }
+//                numberWithZeros /= 10;
+//            }
+//            System.out.println(("Number Without Zeros = ") + numberWithoutZeros);
+        // || lub bez odwracania liczb:
+       // int numberWithZeros = 12002;
+//            int numberWithoutZeros = 0;
+        // //   int multiplier = 1;
+//            while (numberWithZeros != 0) {
+//                int digit1 = numberWithZeros % 10;
+//                if (digit1 != 0) {
+//                    numberWithoutZeros *= 10;
+        //              multiplier *= 10;
+//
+//                }
+//                numberWithZeros /= 10;
+//            }
+//            System.out.println(("Number Without Zeros = ") + numberWithoutZeros);
+        //podajemy liczby tak długo, aż nie zostanie podane 0. Wypisujemy największą liczbę
+
+
+        int value = scanner.nextInt();
+        int maxValue = scanner.nextInt();
         while (value != 0) {
             value = scanner.nextInt();
             if (value > maxValue) {
