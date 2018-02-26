@@ -98,7 +98,10 @@ public class Scope {
         System.out.println(" We have " + counterForSearching + " numbers smaller than " + searchingNumber);
 
 // zadanie domowe//
-        //kodowanie o odkodowywanie szyfru cezara
+        //kodowanie i odkodowywanie szyfru cezara
+
+
+
         //tablica liczb. definiujecie liczbę np .3  ( 1,2,3,4,5,6) - dwie tablice 123 i 456
         //--> tworzymy 2 tablice z elementami odpowiednio mniejszymi i większymi
 

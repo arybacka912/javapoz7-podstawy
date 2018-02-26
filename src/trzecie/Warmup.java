@@ -6,6 +6,7 @@ public class Warmup {
     public static void main(String[] args) {
         // zad 1
         //wczytac liczbe n
+
         //zapytac n razy o liczbe
         //podzielna przez 2 to poinformowac
         //podzielna przez 3 to poinformowac

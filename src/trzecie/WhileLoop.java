@@ -49,7 +49,7 @@ public class WhileLoop {
 //                numberWithZeros /= 10;
 //            }
 //            System.out.println(("Number Without Zeros = ") + numberWithoutZeros);
-        // || lub bez odwracania liczb:
+        // || lub bez odwracania liczb:x
        // int numberWithZeros = 12002;
 //            int numberWithoutZeros = 0;
         // //   int multiplier = 1;

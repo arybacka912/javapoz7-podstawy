@@ -1,7 +1,7 @@
 public class Application {
     public static void main(String[] args) {
         System.out.println("Hello World");
-        System.out.println("How are you?");
+        System.out.println("How old are you?");
 
         int age = 20;
         int myNumber = 8;
