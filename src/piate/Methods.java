@@ -16,6 +16,7 @@ public class Methods {
         printArray(statsOfOccurences(array));
         System.out.println("Moda = " + moda(array));
         printArray(sortByCounting(array));
+        printArray(sortByCounting(array));
 
 //        sumOfArray(array);
 //        avg(array);
@@ -28,6 +29,7 @@ public class Methods {
 //        sumOfArray(newArray);
 //        avg(newArray);
     }
+
 
     // STATYSTYKI
     // 1. napisać metodę która zwraca wartość najmniejszego elementu z tablicy
@@ -52,7 +54,13 @@ public class Methods {
         return max;
     }
 
-    //do wyliczenia mediany potrzebujmey indeksu największej wartości (max)
+    // 3. moda
+    public static int moda(int[] array) {
+        int[] stats = statsOfOccurences(array);
+        int indexOfMaximumValue = indexOfMax(stats);
+        return indexOfMaximumValue + min(array);
+    }
+    //3.5 do wyliczenia mediany potrzebujmey indeksu największej wartości (max)
     public static int indexOfMax(int[] array) {
         int iMax = 0;
         for (int i = 1; i < array.length; i++) {
@@ -61,13 +69,6 @@ public class Methods {
             }
         }
         return iMax;
-    }
-
-    // 3. moda
-    public static int moda(int[] array) {
-        int[] stats = statsOfOccurences(array);
-        int indexOfMaximumValue = indexOfMax(stats);
-        return indexOfMaximumValue + min(array);
     }
 
     // 4. rozpiętość
