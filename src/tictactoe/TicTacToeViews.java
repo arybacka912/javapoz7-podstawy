@@ -1,63 +1,43 @@
 package tictactoe;
 
-import java.util.Scanner;
-
 public class TicTacToeViews {
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int answer;
-        do {
-            TicTacToe.menuView();
-            answer = scanner.nextInt();
-            switch (answer) {
-                case 1:
-                    startGame(scanner);
-                    break;
-            }
-        } while (answer != 0);
-    }
-
-    public static void startGame(Scanner scanner) {
-        boolean result = true;
-        char cross = 'X';
-        char circle = 'O';
-        char currentSign = cross;
         char[] board = "123456789".toCharArray();
-        int i = 0;
-        do {
-            TicTacToe.boardView(board);
-            int position = askForposition(scanner, board);
-            mark(currentSign, board, position);
-            currentSign = currentSign == 'X' ? circle : cross;
-            i++;
-        } while (i < 9 && !gameFinished(board));
-        System.out.println("End of game");
+        boardView(board);
+        board[4] = 'X';
+        boardView(board);
     }
 
-    private static void mark(char currentSign, char[] board, int position) {
-        board[position] = currentSign;
+    public static void menuView() {
+        System.out.println("1. start");
+        System.out.println("0. wyjdz");
     }
 
-    private static boolean gameFinished(char[] board) {
-        // wrzucić tutaj i <9, i sprawdzić czy jest remis
-//        return isFirstDiagonalEqual(board) || isSecondDiagonalEqual(board) || isAnyVerticalEqual(board) || isAnyHorizontalEqual(board);
-//    }
-        return false;
-    }
-
-    public static int askForposition(Scanner scanner, char[] board) {
-        int position;
-        do {
-            position = scanner.nextInt();
-            if (!isValidPosition(position, board)) {
-                System.out.println("Invalid value. Try again");
+    public static void boardView(char[] gameStatus) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < gameStatus.length; i++) {
+            stringBuilder.append(gameStatus[i]);
+            if ((i+1) % 3 == 0 && i != gameStatus.length - 1) {
+                stringBuilder.append("\n");
+                stringBuilder.append("-----");
+                stringBuilder.append("\n");
+            } else if (i != gameStatus.length - 1) {
+                stringBuilder.append("|");
             }
-        } while (!isValidPosition(position, board));
-        return position - 1;
+        }
+        System.out.println(stringBuilder.toString());
     }
 
-    private static boolean isValidPosition(int position, char[] board) {
-        return position >= 1 && position <= 9 && board[position - 1] != 'X' && board[position - 1] != 'O';
+    public static void loserEndGame(char currentSign) {
+        System.out.println("And the loser is " + currentSign);
+    }
 
+    public static void drawEndGame() {
+        System.out.println("Draw");
+    }
+
+    public static void invalidValueFromUserMessage() {
+        System.out.println("Invalid value. Try again");
     }
 }
