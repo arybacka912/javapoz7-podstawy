@@ -1,5 +1,6 @@
 package hangman;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -30,6 +31,8 @@ public class RandomApplication {
 
 //        zadanie 2
         randomArrayFromUser();
+        // zad
+        randomArrayOfEvenNumbers();
     }
 
     // 1. nowa tablica n elemetnowa zlożona z losowych liczb
@@ -67,13 +70,24 @@ public class RandomApplication {
         return array;
     }
     // wygenerować 10 losowych liczb parzystych z zakresu 0 - 10 włącznie while 0-5 włącznie generujemy liczby i x2
-    public static void sum () {
+    public static void randomArrayOfEvenNumbers () {
     // TODO napisać jeszcze raz generowanie liczb
-        int[] array = randomArray();
-        int sum = 0;
-        for (int i = 0; i < array.length; i++) {
-            sum+= array[i];
+        int[] array = new int[10];
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            array[i] = random.nextInt(6) * 2;
         }
-        System.out.println("Sum = " + sum);
+        System.out.println(Arrays.toString(array));
     }
+    public static int[] randomArray2() {
+        int n = 10;
+        int[] array = new int[n];
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(10);
+
+        }
+        return array;
+    }
+
 }
