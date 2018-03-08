@@ -1,6 +1,8 @@
 package oop.bookstore;
 
 import java.util.Scanner;
+//zad. dom
+// todos obiektowy : status, name, object :year, name, owner(dodatkowa class) zdefiniować żeby wszystko się skąpilowało (jakie pola wymagane kiedy set kiedy get?
 
 public class ApplicationBookStore {
     public static void main(String[] args) {

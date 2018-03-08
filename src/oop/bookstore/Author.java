@@ -24,6 +24,8 @@ public class Author {
         return name.toUpperCase(); // zwraca String z wielkimi literami
     }
 
+
+
     public String getBirthDate() {
         return birthDate;
     }
