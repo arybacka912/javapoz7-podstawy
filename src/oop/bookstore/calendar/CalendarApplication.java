@@ -23,25 +23,46 @@ public class CalendarApplication {
                     scanner.nextLine();
                     break;
                 case 2:
-                    int year = scanner.nextInt();
-                    int month = scanner.nextInt();
-                    calendarMonth = CalendarMonth.ofMonth(year, month);
+                    calendarMonth = switchMonth(scanner);
                     scanner.nextLine();
                     break;
                 case 3:
-                    int currentMonth = calendarMonth.getMonth();
-                    int nextYear = calendarMonth.getYear() + (currentMonth == 12 ? 1 : 0);
-                    int nextMonth = currentMonth == 12 ? 1 : currentMonth + 1;
-                    calendarMonth = CalendarMonth.ofMonth(nextYear, nextMonth);
+                    calendarMonth = nextMonth(calendarMonth);
                     scanner.nextLine();
                     break;
                 case 4:
+                    calendarMonth = previousMonth(calendarMonth);
+                    scanner.nextLine();
                     break;
                 default:
                     System.out.println("Invalid command");
             }
 
         } while (answer != 0);
+    }
+
+    private static CalendarMonth previousMonth(CalendarMonth calendarMonth) {
+        int actualMonth = calendarMonth.getMonth();
+        int previousYear = calendarMonth.getYear() + (actualMonth == 1 ? -1 : 0);
+        int previousMonth = actualMonth == 1 ? 12 : actualMonth - 1;
+        calendarMonth = CalendarMonth.ofMonth(previousYear, previousMonth);
+        return calendarMonth;
+    }
+
+    private static CalendarMonth nextMonth(CalendarMonth calendarMonth) {
+        int currentMonth = calendarMonth.getMonth();
+        int nextYear = calendarMonth.getYear() + (currentMonth == 12 ? 1 : 0);
+        int nextMonth = currentMonth == 12 ? 1 : currentMonth + 1;
+        calendarMonth = CalendarMonth.ofMonth(nextYear, nextMonth);
+        return calendarMonth;
+    }
+
+    private static CalendarMonth switchMonth(Scanner scanner) {
+        CalendarMonth calendarMonth;
+        int year = scanner.nextInt();
+        int month = scanner.nextInt();
+        calendarMonth = CalendarMonth.ofMonth(year, month);
+        return calendarMonth;
     }
 
     private static void showMonth(Scanner scanner, CalendarMonth calendarMonth) {
@@ -85,9 +106,7 @@ public class CalendarApplication {
         }
     }
 
-    private static void switchMonth(Scanner scanner) {
 
-    }
 
 //    public static void main(String[] args) {
 //
